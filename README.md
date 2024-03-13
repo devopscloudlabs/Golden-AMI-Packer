@@ -9,8 +9,11 @@ This section defines a Jenkins pipeline (or any CI/CD tool) to automate the AMI 
 Required Plugins: Defines the amazon plugin with version and source for interacting with AWS services.
 
 Source AMI: Configures the amazon-ebs builder to:
+  
   Use ap-southeast-2 region.
+  
   Create an AMI named ami-version-1.0.1-{{timestamp}}.
+  
   Use micro instance type t2.micro.
   Specify a base AMI ID ami-0d6294dcaac5546e4.
   Set ec2-user for SSH access.
