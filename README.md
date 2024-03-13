@@ -8,22 +8,23 @@ This section defines a Jenkins pipeline (or any CI/CD tool) to automate the AMI 
 
 Required Plugins: Defines the amazon plugin with version and source for interacting with AWS services.
 Source AMI: Configures the amazon-ebs builder to:
-Use ap-southeast-2 region.
-Create an AMI named ami-version-1.0.1-{{timestamp}}.
-Use micro instance type t2.micro.
-Specify a base AMI ID ami-0d6294dcaac5546e4.
-Set ec2-user for SSH access.
-Limit deployment region to ap-southeast-2.
+  Use ap-southeast-2 region.
+  Create an AMI named ami-version-1.0.1-{{timestamp}}.
+  Use micro instance type t2.micro.
+  Specify a base AMI ID ami-0d6294dcaac5546e4.
+  Set ec2-user for SSH access.
+  Limit deployment region to ap-southeast-2.
 Build Configuration: Defines the hq-packer build:
-References the source.amazon-ebs.amazon-linux source.
-Uses a series of shell provisioners to:
-Copy provisioner.sh script to the instance.
-Make the script executable.
-List the contents of /tmp directory (for debugging).
-Print the working directory.
-Print the content of provisioner.sh.
-Execute the provisioner.sh script with /bin/bash -x for verbose output.
-Step 3: Provisioning Script (provisioner.sh)
+  References the source.amazon-ebs.amazon-linux source.
+  Uses a series of shell provisioners to:
+  Copy provisioner.sh script to the instance.
+  Make the script executable.
+  List the contents of /tmp directory (for debugging).
+  Print the working directory.
+  Print the content of provisioner.sh.
+  Execute the provisioner.sh script with /bin/bash -x for verbose output.
+  
+## Step 3: Provisioning Script (provisioner.sh)
 
 This script defines the software installations and configurations to be applied to the AMI:
 
