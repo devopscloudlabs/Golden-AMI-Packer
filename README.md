@@ -44,9 +44,9 @@
 
 This script defines the software installations and configurations to be applied to the AMI:
 
-Update Packages: Updates the package list using sudo yum -y update.
-Install Git: Installs git using sudo yum install git -y.
-Install SSM Agent: Downloads and installs the AWS Systems Manager Agent (amazon-ssm-agent) for remote management. While the script installs it, starting the service is commented out (#sudo systemctl start amazon-ssm-agent).
-Install CloudWatch Agent: Downloads and installs the Amazon CloudWatch Agent (amazon-cloudwatch-agent) for monitoring. The script starts (sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a start) and checks the status (sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a status) of the agent.
-Install AWS Inspector: Downloads and installs the AWS Inspector agent for vulnerability scanning.
-Install Docker: Installs Docker (sudo yum install docker -y) and starts the service (sudo systemctl start docker).
+  1) Update Packages: Updates the package list using sudo yum -y update.
+  2) Install Git: Installs git using sudo yum install git -y.
+  3) Install SSM Agent: Downloads and installs the AWS Systems Manager Agent (amazon-ssm-agent) for remote management. While the script installs it, starting the service is commented out (#sudo systemctl start amazon-ssm-agent).
+  4) Install CloudWatch Agent: Downloads and installs the Amazon CloudWatch Agent (amazon-cloudwatch-agent) for monitoring. The script starts (sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a start) and checks the status (sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a status) of the agent.
+  5) Install AWS Inspector: Downloads and installs the AWS Inspector agent for vulnerability scanning.
+  6) Install Docker: Installs Docker (sudo yum install docker -y) and starts the service (sudo systemctl start docker).
