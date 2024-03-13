@@ -7,6 +7,7 @@ This section defines a Jenkins pipeline (or any CI/CD tool) to automate the AMI 
 ## Step 2: Packer Configuration
 
 Required Plugins: Defines the amazon plugin with version and source for interacting with AWS services.
+
 Source AMI: Configures the amazon-ebs builder to:
   Use ap-southeast-2 region.
   Create an AMI named ami-version-1.0.1-{{timestamp}}.
@@ -14,6 +15,7 @@ Source AMI: Configures the amazon-ebs builder to:
   Specify a base AMI ID ami-0d6294dcaac5546e4.
   Set ec2-user for SSH access.
   Limit deployment region to ap-southeast-2.
+
 Build Configuration: Defines the hq-packer build:
   References the source.amazon-ebs.amazon-linux source.
   Uses a series of shell provisioners to:
