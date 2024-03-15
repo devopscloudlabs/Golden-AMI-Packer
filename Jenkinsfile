@@ -1,12 +1,10 @@
 pipeline {
-    agent any
-    stages {
-       stage('Building Resources') {
-          steps {
-              sh ' curl -o packer.zip https://releases.hashicorp.com/packer/1.8.5/packer_1.8.5_linux_amd64.zip'
-              sh 'unzip packer.zip'
-            }
-       }
+    agent {
+    any {
+      image 'hashicorp/packer:latest'
+      args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
+    }
+  }
     
         stage("Building AMI") {
             steps {
@@ -23,5 +21,4 @@ pipeline {
                 }
             }
         }
-    }
 }
