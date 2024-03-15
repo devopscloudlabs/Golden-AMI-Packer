@@ -11,7 +11,7 @@ pipeline {
                         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                     ]
                 ]) {
-                    sh "aws s3 ls"
+                    sh "/path/to/aws s3 ls"
                 }
             }
         }
