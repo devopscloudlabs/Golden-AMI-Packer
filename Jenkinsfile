@@ -19,8 +19,8 @@ pipeline {
                         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                     ]
                 ]) {
-                    sh "packer init aws-ami-v1.pkr.hcl"
-                    sh "packer build aws-ami-v1.pkr.hcl"
+                    sh "./bin/packer init aws-ami-v1.pkr.hcl"
+                    sh "./bin/packer build aws-ami-v1.pkr.hcl"
                 }
             }
         }
