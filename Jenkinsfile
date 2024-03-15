@@ -5,6 +5,7 @@ pipeline {
           steps {
               sh ' curl -o packer.zip https://releases.hashicorp.com/packer/1.8.5/packer_1.8.5_linux_amd64.zip'
               sh 'unzip packer.zip'
+              sh 'mv packer /usr/local/bin/'
           }
         }
         stage("Building AMI") {
@@ -17,7 +18,7 @@ pipeline {
                         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                     ]
                 ]) {
-                    sh "packer init aws-ami-v1.pkr.hcl"
+                    sh "packer init ."
                     sh "packer build aws-ami-v1.pkr.hcl"
                 }
             }
