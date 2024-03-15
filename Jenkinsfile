@@ -1,11 +1,15 @@
 pipeline {
-    agent {
-    any {
-      image 'hashicorp/packer:latest'
-      args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
-    }
-  }
+    agent any
     stages{
+        stage('Building Resources') {
+          steps {
+              sh 'pip install ansible'
+              sh ' curl -o packer.zip https://releases.hashicorp.com/packer/1.8.5/packer_1.8.5_linux_amd64.zip'
+              sh 'unzip packer.zip'
+              sh 'mkdir bin'
+              sh 'mv packer ./bin'
+          }
+        }
         stage("Building AMI") {
             steps {
                 withCredentials([
