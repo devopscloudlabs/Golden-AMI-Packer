@@ -10,9 +10,7 @@ pipeline {
                         accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                     ]
-                ]) {
-                    sh "/path/to/aws s3 ls"
-                }
+                ])
             }
         }
         stage("Building AMI") {
