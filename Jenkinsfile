@@ -3,8 +3,8 @@ pipeline {
     stages{
         stage('Building Resources') {
           steps {
-              sh 'sudo apt-get update'
-              sh 'sudo apt-get install packer'
+              sh 'apt-get update'
+              sh 'apt-get install packer'
           }
         }
         stage("Building AMI") {
