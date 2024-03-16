@@ -3,7 +3,6 @@ pipeline {
     stages{
         stage('Building Resources') {
           steps {
-              sh 'apt-get update'
               sh 'apt-get install packer'
           }
         }
