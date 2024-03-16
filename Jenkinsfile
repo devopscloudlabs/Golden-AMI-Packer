@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Building Resources') {
           steps {
-              sh 'apt-get install packer'
+              sh 'sudo -S apt-get install packer'
           }
         }
         stage("Building AMI") {
