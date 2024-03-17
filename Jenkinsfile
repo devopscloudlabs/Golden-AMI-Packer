@@ -7,7 +7,7 @@ pipeline {
               // sh 'unzip -f packer.zip'
               // sh 'sudo su'
               // sh 'mv packer /usr/local/bin/'  
-              sh 'sudo apt install packer'
+              // sh 'sudo apt install packer'
           }
         }
         stage("Building AMI") {
